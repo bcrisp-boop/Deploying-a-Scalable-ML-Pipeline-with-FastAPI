@@ -74,7 +74,7 @@ def test_compute_model_metrics_known_values():
 
 
 def test_train_model_returns_random_forest(sample_data):
-    """Train_model should return a fitted RandomForestClassifier, 
+    """Train_model should return a fitted RandomForestClassifier,
     inference should return binary predictions."""
     X, y, _, _ = process_data(
         sample_data, categorical_features=CAT_FEATURES, label="salary",
