@@ -86,4 +86,4 @@ def test_train_model_returns_random_forest(sample_data):
     preds = inference(model, X)
     assert preds.shape[0] == X.shape[0]
     assert set(np.unique(preds)).issubset({0, 1})
-    
+
