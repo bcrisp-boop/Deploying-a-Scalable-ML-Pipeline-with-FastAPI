@@ -1,9 +1,9 @@
 import pickle
-import pip
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from ml.data import process_data
 # TODO: add necessary import
+
 
 # Optional: implement hyperparameter tuning.
 def train_model(X_train, y_train):
@@ -25,7 +25,7 @@ def train_model(X_train, y_train):
         n_estimators=100, max_depth=10, random_state=42, n_jobs=-1
     )
     model.fit(X_train, y_train)
-    return model    
+    return model
 
 
 def compute_model_metrics(y, preds):
@@ -94,7 +94,7 @@ def performance_on_categorical_slice(
     """ Computes the model metrics on a slice of the data specified by a column name and
 
     Processes the data using one hot encoding for the categorical features and a
-    label binarizer for the labels. 
+    label binarizer for the labels.
     This can be used in either training or inference/validation.
 
     Inputs

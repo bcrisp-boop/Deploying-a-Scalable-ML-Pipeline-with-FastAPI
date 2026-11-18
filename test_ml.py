@@ -51,7 +51,8 @@ def sample_data():
 
 
 def test_process_data_shapes(sample_data):
-    """ Process data should return feature and label arrays of the correct shape, and the label array should be 0 or 1."""
+    """ Process data should return feature and label arrays of the correct shape, 
+    and the label array should be 0 or 1."""
     X, y, encoder, lb = process_data(
         sample_data, categorical_features=CAT_FEATURES, label="salary",
         training=True,
@@ -63,7 +64,8 @@ def test_process_data_shapes(sample_data):
 
 
 def test_compute_model_metrics_known_values():
-    """Compute model metrics should return the correct precision, recall, and F1 for hand checked values."""
+    """Compute model metrics should return the correct precision, recall,
+      and F1 for hand checked values."""
     y = np.array([1, 1, 0, 0])
     preds = np.array([1, 0, 1, 0])
     precision, recall, f1 = compute_model_metrics(y, preds)
@@ -73,7 +75,8 @@ def test_compute_model_metrics_known_values():
 
 
 def test_train_model_returns_random_forest(sample_data):
-    """Train_model should return a fitted RandomForestClassifier, and inference should return one 0/1 prediction per input row."""
+    """Train_model should return a fitted RandomForestClassifier, 
+    and inference should return one 0/1 prediction per input row."""
     X, y, _, _ = process_data(
         sample_data, categorical_features=CAT_FEATURES, label="salary",
         training=True,
