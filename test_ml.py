@@ -51,7 +51,7 @@ def sample_data():
 
 
 def test_process_data_shapes(sample_data):
-    """ Process data should return feature and label arrays of the correct shape, 
+    """ Process data should return feature and label arrays of the correct shape,
     and the label array should be 0 or 1."""
     X, y, encoder, lb = process_data(
         sample_data, categorical_features=CAT_FEATURES, label="salary",
@@ -74,7 +74,8 @@ def test_compute_model_metrics_known_values():
 
 
 def test_train_model_returns_random_forest(sample_data):
-    """Train_model should return a fitted RandomForestClassifier, inference should return binary predictions."""
+    """Train_model should return a fitted RandomForestClassifier, 
+    inference should return binary predictions."""
     X, y, _, _ = process_data(
         sample_data, categorical_features=CAT_FEATURES, label="salary",
         training=True,
@@ -85,3 +86,4 @@ def test_train_model_returns_random_forest(sample_data):
     preds = inference(model, X)
     assert preds.shape[0] == X.shape[0]
     assert set(np.unique(preds)).issubset({0, 1})
+    
